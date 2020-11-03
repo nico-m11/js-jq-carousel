@@ -1,25 +1,32 @@
 $(document).ready(function(){
 
 
-  $('.next').click(function(){  // al CLICK dell'elemento
-    var imgActive = $('img.active, i.active') // defisnisco una Variabile
-    imgActive.removeClass('active') // impostiamo di togliere l'elemento tra le perentesi ()
+  $('.next').click(function(){ 
+    var imgActive = $('img.active, i.active')
+    imgActive.removeClass('active')
 
-    if(imgActive.hasClass('active')) {   // con questo andremo a verificare dove agg o togliere la class active
+
+    if (imgActive.hasClass('last')){
       $('img.first, i.first').addClass('active')
-       // con questo dico di aggiungere la classse ()
     } else {
-      imgActive.next().removeClass('active')
-       // ritorna a toglierere ()
+      imgActive.next().addClass('active')
     }
   })
 
 
 
+  $('.prev').click(function(){
+    var imgActive = $('img.active, i.active')
+    imgActive.removeClass('active')
 
 
 
-
+    if(imgActive.hasClass('first')){
+      $('img.last, i.last').addClass('active')
+    } else {
+      imgActive.prev().addClass('active')
+    }
+  })
 
 
 
